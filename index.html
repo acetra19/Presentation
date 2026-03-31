@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dein erster KI-Agent: Postfach auf Autopilot</title>
+  <meta name="description" content="Mini-Kurs: E-Mail-Agent in n8n — von Blueprint bis Betrieb." />
+  <!-- Schrift: funktioniert mit file:// nur bei Netzwerkzugriff; sonst greift der System-Stack in CSS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <p class="eyebrow">Mini-Kurs · Bewerbungsprojekt</p>
+      <h1 class="hero-title">Dein erster KI-Agent: Postfach auf Autopilot — von Blueprint bis Betrieb</h1>
+      <p class="hero-lead">
+        Lerne wie du in n8n einen echten E-Mail-Agenten baust — von der ersten Node bis zum produktiven Betrieb.
+      </p>
+      <ul class="tool-tags" aria-label="Verwendete Tools">
+        <li>n8n</li>
+        <li>Groq API</li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+    <section class="section" aria-labelledby="why-heading">
+      <div class="wrap narrow">
+        <h2 id="why-heading" class="section-title">Warum dieser Kurs</h2>
+        <ul class="bullet-list">
+          <li><strong>Keine Theorie — echter Workflow:</strong> live gebaut, Schritt für Schritt nachvollziehbar.</li>
+          <li><strong>Kostenlos umsetzbar:</strong> Groq Free Tier, n8n Self-Hosted — kein Abo-Zwang für den ersten Agenten.</li>
+          <li><strong>Skalierbar:</strong> dasselbe Muster funktioniert für 80% aller Automatisierungen.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section section--muted" aria-labelledby="structure-heading">
+      <div class="wrap">
+        <h2 id="structure-heading" class="section-title">Kursstruktur</h2>
+        <ol class="lesson-list">
+          <li class="lesson-card">
+            <span class="lesson-num">01</span>
+            <div class="lesson-body">
+              <h3 class="lesson-title">Blueprint: Bevor du baust</h3>
+              <p class="lesson-goal">Du definierst Anforderungen, Datenfluss und Entscheidungspunkte — bevor eine Node gezogen wird.</p>
+            </div>
+          </li>
+          <li class="lesson-card lesson-card--live">
+            <span class="lesson-num">02</span>
+            <div class="lesson-body">
+              <span class="live-badge">Live Demo</span>
+              <h3 class="lesson-title">Build: Von Null zum laufenden Agenten</h3>
+              <p class="lesson-goal">Du siehst den kompletten Aufbau im Editor: Trigger, KI-Schritt, Postfach-Logik.</p>
+              <a class="btn-video" href="#video-2">▶️ Video ansehen</a>
+            </div>
+          </li>
+          <li class="lesson-card lesson-card--live">
+            <span class="lesson-num">03</span>
+            <div class="lesson-body">
+              <span class="live-badge">Live Demo</span>
+              <h3 class="lesson-title">Launch: Dein Agent antwortet selbst</h3>
+              <p class="lesson-goal">Du aktivierst den Flow und prüfst echte Antworten — ohne manuelles Kopieren.</p>
+              <a class="btn-video" href="#video-3">▶️ Video ansehen</a>
+            </div>
+          </li>
+          <li class="lesson-card">
+            <span class="lesson-num">04</span>
+            <div class="lesson-body">
+              <h3 class="lesson-title">Monitor: Wie du weißt ob dein Agent läuft</h3>
+              <p class="lesson-goal">Du setzt auf Logs, Fehlerfälle und einfache Health-Checks — damit der Betrieb planbar bleibt.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="demos-heading">
+      <div class="wrap">
+        <h2 id="demos-heading" class="section-title">Live-Demos</h2>
+        <p class="section-sub">Lokale Dateien im Ordner <code>videos/</code> — ohne Drittanbieter-Embed, funktioniert auch per <code>file://</code>.</p>
+        <div class="video-grid">
+          <figure class="video-embed">
+            <figcaption class="video-label">Video 2 — Build</figcaption>
+            <!-- REPLACE: MP4 (und optional WebM) hier ablegen; Pfade anpassen. poster="videos/poster-build.jpg" optional -->
+            <div class="video-frame">
+              <video
+                id="video-2"
+                controls
+                playsinline
+                preload="metadata"
+                title="Build: Von Null zum laufenden Agenten"
+              >
+                <source src="videos/video-2-build.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          </figure>
+          <figure class="video-embed">
+            <figcaption class="video-label">Video 3 — Launch</figcaption>
+            <!-- REPLACE: Datei videos/video-3-launch.mp4 bereitstellen -->
+            <div class="video-frame">
+              <video
+                id="video-3"
+                controls
+                playsinline
+                preload="metadata"
+                title="Launch: Dein Agent antwortet selbst"
+              >
+                <source src="videos/video-3-launch.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--muted" aria-labelledby="author-heading">
+      <div class="wrap narrow">
+        <h2 id="author-heading" class="section-title">Über den Kursersteller</h2>
+        <div class="author-block">
+          <p class="author-name">Florian Kuehnast</p>
+          <p class="author-role">AI Operations Manager &amp; n8n Practitioner</p>
+          <p class="author-site">
+            <a href="https://stress-test.net" rel="noopener noreferrer" target="_blank">stress-test.net</a>
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>&copy; 2026 Florian Kuehnast</p>
+    </div>
+  </footer>
+</body>
+</html>
