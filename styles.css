@@ -90,6 +90,13 @@ body {
   max-width: 52ch;
 }
 
+.hero-audience {
+  margin: calc(-1 * var(--space-md)) 0 var(--space-xl);
+  font-size: 0.95rem;
+  color: var(--color-text);
+  max-width: 48ch;
+}
+
 .tool-tags {
   display: flex;
   flex-wrap: wrap;
@@ -222,6 +229,43 @@ body {
 .lesson-goal {
   margin: 0;
   font-size: 0.95rem;
+  color: var(--color-text-muted);
+}
+
+.lesson-goal--secondary {
+  margin-top: var(--space-sm);
+}
+
+.lesson-goal strong {
+  color: var(--color-text);
+}
+
+.lesson-outline-title {
+  margin: var(--space-md) 0 var(--space-sm);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+.lesson-outline {
+  margin: 0;
+  padding-left: 1.1rem;
+  color: var(--color-text-muted);
+}
+
+.lesson-outline li {
+  margin-bottom: var(--space-xs);
+}
+
+.lesson-outline li:last-child {
+  margin-bottom: 0;
+}
+
+.lesson-note {
+  margin: var(--space-md) 0 0;
+  font-size: 0.9rem;
   color: var(--color-text-muted);
 }
 

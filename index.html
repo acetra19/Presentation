@@ -19,6 +19,7 @@
       <p class="hero-lead">
         Lerne wie du in n8n einen echten E-Mail-Agenten baust — von der ersten Node bis zum produktiven Betrieb.
       </p>
+      <p class="hero-audience">Für alle, die gerade eine KI-Agentur aufbauen möchten.</p>
       <ul class="tool-tags" aria-label="Verwendete Tools">
         <li>n8n</li>
         <li>Groq API</li>
@@ -45,16 +46,33 @@
           <li class="lesson-card">
             <span class="lesson-num">01</span>
             <div class="lesson-body">
-              <h3 class="lesson-title">Blueprint: Bevor du baust</h3>
-              <p class="lesson-goal">Du definierst Anforderungen, Datenfluss und Entscheidungspunkte — bevor eine Node gezogen wird.</p>
+              <h3 class="lesson-title">Blueprint: Bevor du baust — wie dein Agent denkt und entscheidet</h3>
+              <p class="lesson-goal"><strong>Lernziel:</strong> Du hast deinen eigenen Agent-Blueprint — die vier Komponenten, ihre Verbindungen und die Kategorien, die dein Agent erkennen soll.</p>
+              <p class="lesson-outline-title">Aufbau</p>
+              <ol class="lesson-outline">
+                <li>Das Problem — warum manuelles Email-Triaging verschwendete Kapazität ist.</li>
+                <li>Der Agent als System: Trigger, Analyse, Routing, Antwort.</li>
+                <li>Tool-Entscheidung — warum n8n + LLM API (kein teures Setup, sofort einsetzbar).</li>
+                <li>Deinen Agent-Blueprint erstellen (5 Minuten, Stift oder Miro).</li>
+              </ol>
             </div>
           </li>
           <li class="lesson-card lesson-card--live">
             <span class="lesson-num">02</span>
             <div class="lesson-body">
               <span class="live-badge">Live Demo</span>
-              <h3 class="lesson-title">Build: Von Null zum laufenden Agenten</h3>
-              <p class="lesson-goal">Du siehst den kompletten Aufbau im Editor: Trigger, KI-Schritt, Postfach-Logik.</p>
+              <h3 class="lesson-title">Build: Von Null zum laufenden Agenten — live in n8n</h3>
+              <p class="lesson-goal"><strong>Lernziel:</strong> Du hast einen laufenden n8n-Workflow, der eingehende Emails empfängt, per LLM klassifiziert und automatisch mit einer ersten Antwort reagiert.</p>
+              <p class="lesson-outline-title">Aufbau</p>
+              <ol class="lesson-outline">
+                <li>Workflow-Überblick: die 5 Nodes in einfacher Sprache.</li>
+                <li>IMAP Trigger Node einrichten (Credentials, Host, SSL).</li>
+                <li>HTTP Request Node: LLM klassifiziert Email in ANFRAGE / BESCHWERDE / SPAM / SONSTIGES.</li>
+                <li>Edit Fields Node: Kategorie per Drag &amp; Drop extrahieren.</li>
+                <li>Switch Node: 4 Routing-Regeln aufbauen.</li>
+                <li>Send Email Node: Kategorie-Tag im Subject + automatische Antwort.</li>
+                <li>Live-Test: Email schicken, Postausgang prüfen.</li>
+              </ol>
               <a class="btn-video" href="#video-2">▶️ Video ansehen</a>
             </div>
           </li>
@@ -62,16 +80,36 @@
             <span class="lesson-num">03</span>
             <div class="lesson-body">
               <span class="live-badge">Live Demo</span>
-              <h3 class="lesson-title">Launch: Dein Agent antwortet selbst</h3>
-              <p class="lesson-goal">Du aktivierst den Flow und prüfst echte Antworten — ohne manuelles Kopieren.</p>
+              <h3 class="lesson-title">Launch: Dein Agent antwortet selbst und wird messbar</h3>
+              <p class="lesson-goal"><strong>Lernziel 1:</strong> Du kannst einen LLM-Prompt so strukturieren, dass er kategorie-abhängig unterschiedliche Tonalitäten produziert — ohne mehrere separate Nodes zu bauen.</p>
+              <p class="lesson-goal lesson-goal--secondary"><strong>Lernziel 2:</strong> Du hast einen automatischen Aktivitäts-Log eingerichtet, mit dem du oder dein Kunde jederzeit nachvollziehen kann, was der Agent wann getan hat.</p>
+              <p class="lesson-outline-title">Aufbau</p>
+              <ol class="lesson-outline">
+                <li>Kurzrückblick: Was noch fehlt — statische Antworten vs. individuelle Reaktionen.</li>
+                <li>LLM-Node vor den Switch: Warum ein Node für alle Kategorien reicht.</li>
+                <li>System-Prompt bauen: Kategorie + E-Mail-Inhalt als Variablen.</li>
+                <li>Switch Node und Send Email aktualisieren.</li>
+                <li>SPAM Branch: Warum keine Antwort die bessere Entscheidung ist.</li>
+                <li>Google Sheets einrichten und Node mappen ("Copilot" / "AutoEmail").</li>
+                <li>End-to-End Test + Ausblick auf Video 4.</li>
+              </ol>
               <a class="btn-video" href="#video-3">▶️ Video ansehen</a>
             </div>
           </li>
           <li class="lesson-card">
             <span class="lesson-num">04</span>
             <div class="lesson-body">
-              <h3 class="lesson-title">Monitor: Wie du weißt ob dein Agent läuft</h3>
-              <p class="lesson-goal">Du setzt auf Logs, Fehlerfälle und einfache Health-Checks — damit der Betrieb planbar bleibt.</p>
+              <h3 class="lesson-title">Monitor: Wie du weißt ob dein Agent läuft — und was du tust, wenn nicht</h3>
+              <p class="lesson-goal"><strong>Lernziel:</strong> Du weißt, wie du erkennst ob der Agent korrekt läuft, wie du Fehler systematisch abfängst und wie du ihn nach dem Launch betreust.</p>
+              <p class="lesson-outline-title">Aufbau</p>
+              <ol class="lesson-outline">
+                <li>Wann du eingreifen musst und wann der Agent es selbst regelt.</li>
+                <li>n8n Execution Log: was du täglich im Blick haben solltest.</li>
+                <li>Error Trigger Node einrichten: automatische Benachrichtigung wenn etwas schiefläuft.</li>
+                <li>Typische Fehlerquellen und wie du sie löst (IMAP-Timeout, Rate Limit, leere Email).</li>
+                <li>DSGVO-Check: Was du vor dem Produktiveinsatz beim Kunden klären musst.</li>
+              </ol>
+              <p class="lesson-note">Faustregel: Kunde im EU-Raum — das Thema ansprechen, bevor der Workflow live geht.</p>
             </div>
           </li>
         </ol>
@@ -81,36 +119,42 @@
     <section class="section" aria-labelledby="demos-heading">
       <div class="wrap">
         <h2 id="demos-heading" class="section-title">Live-Demos</h2>
-        <p class="section-sub">Lokale Dateien im Ordner <code>videos/</code> — ohne Drittanbieter-Embed, funktioniert auch per <code>file://</code>.</p>
+        <p class="section-sub">
+          MP4 wird im Browser <strong>progressiv</strong> geladen — Wiedergabe startet ohne die ganze Datei herunterzuladen. Lokal: Dateien in <code>videos/</code> + <code>file://</code>.
+          Online (z.&nbsp;B. GitHub Pages): MP4s ins Repo legen und pushen; pro Datei praktisch bis ca. <strong>100&nbsp;MB</strong> in normalem Git.
+          Größere Dateien: z.&nbsp;B. <strong>Release-Asset</strong>-URL oder CDN — dann <code>src</code> der <code>&lt;source&gt;</code>-Zeilen auf die volle HTTPS-URL stellen (Kommentar unten).
+        </p>
         <div class="video-grid">
           <figure class="video-embed">
             <figcaption class="video-label">Video 2 — Build</figcaption>
-            <!-- REPLACE: MP4 (und optional WebM) hier ablegen; Pfade anpassen. poster="videos/poster-build.jpg" optional -->
+            <!-- Primärquelle: GitHub Release Asset (500MB-tauglich). Fallback darunter: lokale Datei für file:// -->
             <div class="video-frame">
               <video
                 id="video-2"
                 controls
                 playsinline
-                preload="metadata"
+                preload="none"
                 title="Build: Von Null zum laufenden Agenten"
               >
-                <source src="videos/video-2-build.mp4" type="video/mp4" />
+                <source src="https://github.com/acetra19/Presentation/releases/download/v1-videos/HeartbeatVIDEO2.mp4" type="video/mp4" />
+                <source src="videos/HeartbeatVIDEO2.mp4" type="video/mp4" />
                 Your browser does not support the video tag.
               </video>
             </div>
           </figure>
           <figure class="video-embed">
             <figcaption class="video-label">Video 3 — Launch</figcaption>
-            <!-- REPLACE: Datei videos/video-3-launch.mp4 bereitstellen -->
+            <!-- Primärquelle: GitHub Release Asset (500MB-tauglich). Fallback darunter: lokale Datei für file:// -->
             <div class="video-frame">
               <video
                 id="video-3"
                 controls
                 playsinline
-                preload="metadata"
+                preload="none"
                 title="Launch: Dein Agent antwortet selbst"
               >
-                <source src="videos/video-3-launch.mp4" type="video/mp4" />
+                <source src="https://github.com/acetra19/Presentation/releases/download/v1-videos/HeartbeatVIDEO3.mp4" type="video/mp4" />
+                <source src="videos/HeartbeatVIDEO3.mp4" type="video/mp4" />
                 Your browser does not support the video tag.
               </video>
             </div>
