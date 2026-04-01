@@ -278,7 +278,7 @@ main {
 .bullet-list {
   margin: 0;
   padding-left: 1.15rem;
-  color: var(--color-text-muted);
+  color: var(--color-text);
 }
 
 .bullet-list li {
@@ -290,7 +290,7 @@ main {
 }
 
 .bullet-list strong {
-  color: var(--color-text);
+  color: var(--color-accent);
   font-weight: 600;
 }
 
@@ -323,7 +323,7 @@ main {
 .lesson-num {
   font-size: 0.8rem;
   font-weight: 600;
-  color: var(--color-text-muted);
+  color: var(--color-accent);
   font-variant-numeric: tabular-nums;
   padding-top: 0.15rem;
 }
@@ -350,12 +350,13 @@ main {
   margin: 0 0 var(--space-sm);
   font-size: 1.05rem;
   font-weight: 600;
+  color: var(--color-accent);
 }
 
 .lesson-goal {
   margin: 0;
   font-size: 0.95rem;
-  color: var(--color-text-muted);
+  color: var(--color-text);
 }
 
 .lesson-goal--secondary {
@@ -363,7 +364,7 @@ main {
 }
 
 .lesson-goal strong {
-  color: var(--color-text);
+  color: var(--color-accent);
 }
 
 .lesson-outline-title {
@@ -372,13 +373,13 @@ main {
   font-weight: 600;
   letter-spacing: 0.05em;
   text-transform: uppercase;
-  color: var(--color-text-muted);
+  color: var(--color-accent);
 }
 
 .lesson-outline {
   margin: 0;
   padding-left: 1.1rem;
-  color: var(--color-text-muted);
+  color: var(--color-text);
 }
 
 .lesson-outline li {
@@ -392,7 +393,7 @@ main {
 .lesson-note {
   margin: var(--space-md) 0 0;
   font-size: 0.9rem;
-  color: var(--color-text-muted);
+  color: var(--color-text);
 }
 
 .btn-video {
