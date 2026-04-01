@@ -39,6 +39,45 @@
 
 html {
   scroll-behavior: smooth;
+  min-height: 100%;
+  color-scheme: dark;
+  /* Basis immer sichtbar — negative z-index auf body-Kinder landet sonst „hinter“ dem Canvas */
+  background-color: #070a10;
+  background-image:
+    radial-gradient(1200px 700px at 12% -8%, rgba(14, 165, 233, 0.55), transparent 58%),
+    radial-gradient(900px 600px at 88% 8%, rgba(34, 211, 238, 0.28), transparent 55%),
+    radial-gradient(800px 900px at 50% 105%, rgba(59, 130, 246, 0.18), transparent 60%),
+    linear-gradient(168deg, #0f1729 0%, #0a1018 42%, #06080e 100%);
+}
+
+html::before {
+  content: "";
+  position: fixed;
+  inset: -20%;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.85;
+  background:
+    radial-gradient(circle at 22% 28%, rgba(14, 165, 233, 0.55) 0%, transparent 42%),
+    radial-gradient(circle at 78% 38%, rgba(56, 189, 248, 0.38) 0%, transparent 44%);
+  filter: blur(72px);
+  transform: translate3d(0, 0, 0);
+  animation: float-orb-a 16s ease-in-out infinite alternate;
+}
+
+html::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.95;
+  background-image:
+    radial-gradient(620px circle at var(--mx) var(--my), rgba(14, 165, 233, 0.38), transparent 62%),
+    linear-gradient(rgba(255, 255, 255, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.038) 1px, transparent 1px);
+  background-size: auto, 40px 40px, 40px 40px;
+  mask-image: radial-gradient(ellipse 85% 70% at 50% 38%, black 0%, transparent 78%);
 }
 
 body {
@@ -47,69 +86,16 @@ body {
   font-size: 1rem;
   line-height: 1.55;
   color: var(--color-text);
-  background: var(--color-bg);
+  background: transparent;
   -webkit-font-smoothing: antialiased;
   position: relative;
+  z-index: 1;
   overflow-x: hidden;
-}
-
-body::before,
-body::after {
-  content: "";
-  position: fixed;
-  pointer-events: none;
-  z-index: -2;
-  border-radius: 999px;
-  filter: blur(70px);
-  opacity: 0.32;
-}
-
-body::before {
-  width: min(45vw, 520px);
-  height: min(45vw, 520px);
-  top: -8rem;
-  left: -6rem;
-  background: radial-gradient(circle at 35% 35%, rgba(14, 165, 233, 0.55), rgba(14, 165, 233, 0.04) 72%);
-  animation: float-orb-a 16s ease-in-out infinite alternate;
-}
-
-body::after {
-  width: min(42vw, 480px);
-  height: min(42vw, 480px);
-  right: -7rem;
-  top: 38vh;
-  background: radial-gradient(circle at 65% 35%, rgba(56, 189, 248, 0.42), rgba(56, 189, 248, 0.03) 74%);
-  animation: float-orb-b 20s ease-in-out infinite alternate;
+  min-height: 100vh;
 }
 
 main {
   position: relative;
-  z-index: 0;
-}
-
-main::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  z-index: -1;
-  opacity: 0.2;
-  background-image:
-    linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
-  background-size: 38px 38px, 38px 38px;
-  mask-image: radial-gradient(circle at center, black 35%, transparent 100%);
-}
-
-main::after {
-  content: "";
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  z-index: -1;
-  opacity: 0.2;
-  background: radial-gradient(520px circle at var(--mx) var(--my), rgba(14, 165, 233, 0.22), transparent 60%);
-  transition: background 0.2s ease-out;
 }
 
 .wrap {
@@ -128,8 +114,8 @@ main::after {
   padding: var(--space-3xl) 0 var(--space-2xl);
   border-bottom: 1px solid var(--color-border);
   background:
-    radial-gradient(120% 95% at 50% -20%, rgba(14, 165, 233, 0.2) 0%, rgba(14, 165, 233, 0.02) 55%, transparent 80%),
-    linear-gradient(180deg, var(--color-surface) 0%, var(--color-bg) 85%);
+    radial-gradient(120% 95% at 50% -20%, rgba(14, 165, 233, 0.32) 0%, rgba(14, 165, 233, 0.06) 55%, transparent 82%),
+    linear-gradient(180deg, rgba(15, 21, 34, 0.88) 0%, rgba(8, 11, 18, 0.42) 78%, transparent 100%);
   position: relative;
 }
 
@@ -208,9 +194,16 @@ main::after {
 }
 
 .section--muted {
-  background: var(--color-surface);
+  background: rgba(15, 20, 32, 0.58);
   border-top: 1px solid var(--color-border);
   border-bottom: 1px solid var(--color-border);
+}
+
+@supports ((-webkit-backdrop-filter: blur(1px)) or (backdrop-filter: blur(1px))) {
+  .section--muted {
+    -webkit-backdrop-filter: blur(14px);
+    backdrop-filter: blur(14px);
+  }
 }
 
 .section-title {
@@ -477,18 +470,8 @@ main::after {
   }
 }
 
-@keyframes float-orb-b {
-  from {
-    transform: translate3d(0, 0, 0) scale(1);
-  }
-  to {
-    transform: translate3d(-28px, -20px, 0) scale(1.06);
-  }
-}
-
 @media (prefers-reduced-motion: reduce) {
-  body::before,
-  body::after {
+  html::before {
     animation: none;
   }
 
@@ -496,10 +479,6 @@ main::after {
   .js-enabled .section.is-visible {
     opacity: 1;
     transform: none;
-    transition: none;
-  }
-
-  main::after {
     transition: none;
   }
 }
