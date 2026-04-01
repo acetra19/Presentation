@@ -177,6 +177,53 @@ main {
   border-radius: var(--radius-sm);
 }
 
+/* === Hero visual === */
+.hero-visual {
+  margin: 0 0 var(--space-xl);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  line-height: 0;
+  position: relative;
+}
+
+.hero-visual::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  box-shadow: inset 0 0 36px 8px rgba(14, 165, 233, 0.12);
+  pointer-events: none;
+}
+
+.hero-visual__img {
+  width: 100%;
+  height: auto;
+  display: block;
+  animation: img-float 6s ease-in-out infinite alternate;
+  transform-origin: 50% 52%;
+}
+
+@keyframes img-float {
+  from {
+    transform: scale(1) translateY(0);
+    filter: brightness(0.92);
+  }
+  50% {
+    filter: brightness(1.05);
+  }
+  to {
+    transform: scale(1.025) translateY(-3px);
+    filter: brightness(0.96);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-visual__img {
+    animation: none;
+  }
+}
+
 /* === Sections === */
 .section {
   padding: var(--space-3xl) 0;
